@@ -2,31 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>3D Model Viewer</title>
+  <title>Neil Armstrong 3D Model</title>
+  <!-- Import the model-viewer component -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    body { margin: 0; }
-    model-viewer { width: 100%; height: 100vh; }
+    body {
+      margin: 0;
+      background: #000;
+    }
+    model-viewer {
+      width: 100%;
+      height: 600px; /* adjust for LibGuide layout */
+      display: block;
+    }
   </style>
 </head>
 <body>
 
-<model-viewer 
-  src="Male_body_2_Pixel_9xl.glb"
+<model-viewer
+  src="https://baylor0-my.sharepoint.com/:u:/g/personal/b_harper_baylor_edu1/IQAVqo7PdocwR7CEWFmpjc19AdIEjOI7l84luHobi4JVvYQ?download=1"
+  alt="Neil Armstrong Spacesuit"
   ar
   ar-modes="webxr scene-viewer quick-look"
   camera-controls
-  tone-mapping="neutral"
-  poster="poster.webp"
+  auto-rotate
+  poster="" <!-- optional: add direct link to a poster image -->
   shadow-intensity="0.97"
   exposure="2"
-  environment-image="spruit_sunrise_1k_HDR.hdr"
-  skybox-image="spruit_sunrise_1k_HDR.hdr"
+  environment-image="" <!-- optional HDR link -->
+  skybox-image="" <!-- optional HDR link -->
   shadow-softness="1"
   camera-target="300.9m -600m 948.8m"
   camera-orbit="2.011deg 176.3deg 12880m"
   field-of-view="30deg">
 
+  <!-- AR UI elements -->
   <div class="progress-bar hide" slot="progress-bar">
     <div class="update-bar"></div>
   </div>
@@ -34,8 +44,9 @@
     View in your space
   </button>
   <div id="ar-prompt">
-    <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    <img src="https://modelviewer.dev/shared-assets/icons/hand.png" alt="AR prompt">
   </div>
+
 </model-viewer>
 
 </body>
